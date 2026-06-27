@@ -1,0 +1,5 @@
+raise ValueError("boom")\
+remove\
+0.0\
+normalize\
+zzz

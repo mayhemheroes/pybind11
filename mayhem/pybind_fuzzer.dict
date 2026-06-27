@@ -1,0 +1,95 @@
+# libFuzzer dictionary for the pybind11 embedded-interpreter harness.
+# Field 1 is Python source run via py::exec; later fields are attribute names /
+# Decimal strings. Tokens below steer the exec'd source toward real Python syntax
+# plus the attribute/method names the harness probes (os.*, Decimal.*).
+# Escapes only: \\  \"  \xNN  (a single backslash ends an FDP field, so \x5c pairs
+# two fields in one seed). No \n/\t — use \x0a / \x09.
+
+# --- Python statement/expression keywords ---
+"import "
+"from "
+"def "
+"class "
+"lambda "
+"return "
+"yield "
+"raise "
+"assert "
+"try:"
+"except"
+"finally:"
+"with "
+"for "
+"while "
+"if "
+"elif "
+"else:"
+"global "
+"nonlocal "
+"del "
+"print("
+"exec("
+"eval("
+"__import__"
+
+# --- builtins / dunder surface ---
+"None"
+"True"
+"False"
+"self"
+"object"
+"type("
+"str("
+"int("
+"float("
+"bytes("
+"dict("
+"list("
+"tuple("
+"range("
+"len("
+"open("
+"__class__"
+"__dict__"
+"__name__"
+"__init__"
+"__call__"
+"__getattr__"
+
+# --- modules the harness imports ---
+"os"
+"sys"
+"decimal"
+"Decimal"
+
+# --- os attribute names probed via attr(<bytes>) ---
+"makedirs"
+"system"
+"environ"
+"getcwd"
+"path"
+"remove"
+"listdir"
+
+# --- Decimal method names / operands ---
+"sqrt"
+"exp"
+"ln"
+"log10"
+"as_tuple"
+"normalize"
+"quantize"
+"3.14159"
+"-1.5e10"
+"NaN"
+"Infinity"
+
+# --- FDP field separator (single backslash, not the \\ escape) ---
+"\x5c"
+"=="
+"+="
+"()"
+"[]"
+"{}"
+":\x0a"
+"    "

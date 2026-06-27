@@ -1,0 +1,6 @@
+x = 1 + 2
+print(x)\
+makedirs\
+3.14\
+as_tuple\
+hello

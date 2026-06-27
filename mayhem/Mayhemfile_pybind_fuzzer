@@ -1,0 +1,8 @@
+project: pybind11
+target: pybind_fuzzer
+testsuite:
+  - file:///mayhem/mayhem/testsuite/pybind_fuzzer
+cmds:
+  - cmd: /mayhem/pybind_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/pybind_fuzzer.dict

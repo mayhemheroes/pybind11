@@ -1,0 +1,8 @@
+class C:
+    def __init__(self):
+        self.v = 42
+C().v\
+getcwd\
+2.71828\
+sqrt\
+abc
